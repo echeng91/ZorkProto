@@ -6,6 +6,7 @@ public class Room {
 	private Inventory things;
 	private boolean visited;
 	private ArrayList<Room> connectedRooms;
+	private ArrayList<Character> nonPlayerCharacters;
 
 	//Constructors
 	public Room()
@@ -18,6 +19,7 @@ public class Room {
 		things = new Inventory();
 		visited = false;
 		connectedRooms = new ArrayList<Room>();
+		nonPlayerCharacters = new ArrayList<Character>();
 	}
 	public Room(String name, Inventory stuff, boolean seen)
 	{
@@ -25,6 +27,7 @@ public class Room {
 		things = stuff;
 		visited = seen;
 		connectedRooms = new ArrayList<Room>();
+		nonPlayerCharacters = new ArrayList<Character>();
 	}
 	//end Constructors
 
@@ -44,6 +47,10 @@ public class Room {
 	public ArrayList<Room> getConnectedRooms()
 	{
 		return connectedRooms;
+	}
+	public ArrayList<Character> getNPCs()
+	{
+		return nonPlayerCharacters;
 	}
 	//end Getters
 

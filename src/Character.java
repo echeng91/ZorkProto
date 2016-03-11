@@ -1,6 +1,7 @@
 
-public class Character extends Item{
+public class Character {
 
+	private String identity;
 	private int maxHP;
 	private int currentHP;
 	private int power;
@@ -11,11 +12,15 @@ public class Character extends Item{
 	//Constructors
 	public Character(String name)
 	{
-		super(name);
+		identity = name;
 		inventory = new Inventory();
 	}
 	
 	//Getters
+	public String getID()
+	{
+		return identity;
+	}
 	public int getMaxHP()
 	{
 		return maxHP;

@@ -1,6 +1,6 @@
 import java.text.NumberFormat;
 
-public class Player extends Character{
+public class Player extends Character {
 
 	public Player(String name)
 	{
@@ -34,7 +34,7 @@ public class Player extends Character{
 		{
 			this.getInventory().addItem(item);
 			this.getLocation().getThings().removeItem(item);
-			loot += item.getID();
+			loot += "\n" + item.getID();
 		}
 		this.getInventory().addMoney(this.getLocation().getThings().getMoney());
 		loot += NumberFormat.getCurrencyInstance().format(this.getLocation().getThings().getMoney());
@@ -46,7 +46,7 @@ public class Player extends Character{
 	{
 		String status = "";
 		status += "Name: " + this.getID();
-		status += "\nInventory: " + this.getInventory().toString();
+		status += "\nInventory " + this.getInventory().toString();
 		return status;
 	}
 	

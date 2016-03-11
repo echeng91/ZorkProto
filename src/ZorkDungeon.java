@@ -39,8 +39,8 @@ public class ZorkDungeon {
 		{
 			room.getThings().addMoney((double)rnd.nextInt(100000)/100.0);
 		}
-		System.out.println(foyer.getThings().getMoney());
-		Player p1 = new Player("Solo");
+		System.out.print("Input name: ");
+		Player p1 = new Player(sc.nextLine());
 		p1.setLocation(foyer);
 		String choice = "";
 		while(!choice.equals("exit"))
@@ -54,12 +54,13 @@ public class ZorkDungeon {
 				}
 			}
 			System.out.println(p1.getLocation().toString());
-			System.out.print("Where go? ");
+			System.out.print("Where will you go? ");
 			choice = sc.nextLine();
+			System.out.println();
 			boolean roomFound = false;
 			if(choice.equals("take"))
 			{
-				p1.takeAllFromRoom();
+				System.out.println(p1.takeAllFromRoom());
 			}
 			else if(choice.equals("status"))
 			{
@@ -89,16 +90,5 @@ public class ZorkDungeon {
 		}
 
 		sc.close();
-		/*
-		System.out.println(p1.getInventory().getMoney());
-		System.out.println(p1.takeAllFromRoom());
-		System.out.println(p1.getInventory().getMoney());
-		System.out.println(foyer.getThings().getMoney());
-		System.out.println(p1.getLocation().getRoomName());
-		System.out.println(p1.moveTo(library));
-		System.out.println(p1.moveTo(frontRoom));
-		System.out.println(p1.moveTo(library));
-		System.out.println(p1.moveTo(foyer));
-		 */
 	}
 }
